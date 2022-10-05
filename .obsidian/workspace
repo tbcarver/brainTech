@@ -1,0 +1,136 @@
+{
+  "main": {
+    "id": "da1c068e02824685",
+    "type": "split",
+    "children": [
+      {
+        "id": "20f4d1bc0aa13fdc",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "fashionphile/web-app.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e87268d30c44ab6e",
+    "type": "split",
+    "children": [
+      {
+        "id": "be56c66ebc41700b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49fe2fb71ef1ab91",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "cef6fa6668b41aed",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1f384b61036519de",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dc530399d08892fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "525d1075e7197407",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "109c49bd59c79723",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "fashionphile/web-app.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7932f21830aec631",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "fashionphile/web-app.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b69cc4e7685659fc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8e20f1c28a7dbaca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "fashionphile/web-app.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "20f4d1bc0aa13fdc",
+  "lastOpenFiles": [
+    "README.md",
+    "2022-10-05.md"
+  ]
+}
