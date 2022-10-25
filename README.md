@@ -6,7 +6,7 @@ My 2nd Brain for Technology
 	git config --global user.email "tbcarver@yahoo.com"
 
 ## Install github ssh private & public keys
-*use well named ssh file i.e. id_rsa*
+*use well named ssh file i.e. id_rsa* 🤔
 
 	cd ~/.ssh (or mkdir ~/.ssh && cd ~/.ssh)
 	touch id_rsa && chmod 600 id_rsa
