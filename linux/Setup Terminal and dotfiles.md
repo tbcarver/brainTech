@@ -3,6 +3,7 @@
 - Install **Tabby** for the termial https://tabby.sh/
 	- setting, hotkeys: set copy, paste
 	- settings, appearance: set font MesloLGS NF, increase size by 3
+	- settings, terminal: Warn on multi-line paste, turn off
 - `sudo apt update && sudo apt install zsh yadm keychain`    
 - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k`    
 - `yadm clone git@github.com:tbcarver/dotfiles.git`
