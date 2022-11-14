@@ -37,14 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/KDE/Setup.md",
+                "file": "linux/Setup Terminal and dotfiles.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "67be858b86f6dee8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docker/AWS Docker Registry.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/KDE/Setup.md",
+                "file": "docker/AWS Docker Registry.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/KDE/Setup.md",
+                "file": "docker/AWS Docker Registry.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/KDE/Setup.md"
+                "file": "docker/AWS Docker Registry.md"
               }
             }
           }
@@ -161,9 +173,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0eb0328a6adb1f58",
+  "active": "67be858b86f6dee8",
   "lastOpenFiles": [
     "linux/Setup Terminal and dotfiles.md",
+    "linux/KDE/Setup.md",
     "README.md",
     "fashionphile/web-app.md",
     "2022-10-05.md"
