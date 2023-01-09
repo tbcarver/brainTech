@@ -37,26 +37,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/Setup Terminal and dotfiles.md",
+                "file": "linux/kde/Setup.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "67be858b86f6dee8",
+            "id": "aa1615f84b1314ac",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "linux/kde/Setup.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "557208d92a4149db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docker/AWS Docker Registry.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "89abebd4645faa72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docker/AWS Docker Registry.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -122,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "docker/AWS Docker Registry.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "docker/AWS Docker Registry.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "docker/AWS Docker Registry.md"
               }
             }
           }
@@ -173,12 +197,15 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "67be858b86f6dee8",
+  "active": "89abebd4645faa72",
   "lastOpenFiles": [
+    "aws/cli/Profiles.md",
     "docker/AWS Docker Registry.md",
-    "fashionphile/web-app.md",
-    "linux/KDE/Setup.md",
+    "fashionphile/Web App.md",
+    "linux/kde/Setup.md",
+    "linux/kde/Faster Scrolling with IMWheel.md",
     "linux/Setup Terminal and dotfiles.md",
+    "linux/Chrome Remote Desktop.md",
     "README.md",
     "2022-10-05.md"
   ]
