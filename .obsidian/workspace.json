@@ -73,38 +73,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "docker/AWS Docker Registry.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "4e43eb0414780ca2",
+            "id": "cf77be9463a1acb5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "docker/AWS Docker Registry.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "647fdf48de72ff54",
+            "id": "c450236dc33181ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "php/XDebug.md",
+                "file": "linux/Setup Terminal and dotfiles.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "15303313c0638449",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vscode/Upgrade on Linux.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -170,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "php/XDebug.md",
+                "file": "vscode/Upgrade on Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "php/XDebug.md",
+                "file": "vscode/Upgrade on Linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "php/XDebug.md"
+                "file": "vscode/Upgrade on Linux.md"
               }
             }
           }
@@ -231,17 +243,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "647fdf48de72ff54",
+  "active": "15303313c0638449",
   "lastOpenFiles": [
-    "fashionphile/Web App.md",
-    "php/XDebug.md",
-    "php/PHP Artisan.md",
-    "docker/AWS Docker Registry.md",
+    "linux/Setup Terminal and dotfiles.md",
+    "README.md",
     "aws/cli/Profiles.md",
+    "docker/AWS Docker Registry.md",
+    "docker/Docker Cheatsheet.md",
+    "fashionphile/Web App.md",
     "linux/kde/Setup.md",
     "linux/kde/Faster Scrolling with IMWheel.md",
-    "linux/Setup Terminal and dotfiles.md",
     "linux/Chrome Remote Desktop.md",
-    "README.md"
+    "2022-10-05.md"
   ]
 }
