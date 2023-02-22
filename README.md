@@ -15,6 +15,9 @@ copy & paste private github tbcarver ssh key from lastpass (**include ending new
  
 	touch id_rsa.pub && chmod 600 id_rsa.pub
 	nano id_rsa.pub
+
 copy public github tbcarver ssh key from lastpass (**include ending new line**)
 
 	ssh-add ~/.ssh/id_rsa
+
+see ./linux/Setup Terminal and dotfiles
