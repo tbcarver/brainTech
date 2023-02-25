@@ -138,9 +138,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "99d9de51c4a2bc47",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "linux/kde/Week Password.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -267,8 +279,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "94256ad8f4ee7653",
+  "active": "99d9de51c4a2bc47",
   "lastOpenFiles": [
+    "linux/kde/Chrome Remote Desktop.md",
+    "linux/kde/Week Password.md",
     "linux/kde/System Policy Grants.md",
     "linux/Setup Terminal and dotfiles.md",
     "README.md",
@@ -276,8 +290,6 @@
     "linux/kde/Faster Scrolling with IMWheel.md",
     "vscode/Upgrade on Linux.md",
     "docker/AWS Docker Registry.md",
-    "docker/Docker Cheatsheet.md",
-    "fashionphile/Web App.md",
-    "linux/kde/Setup.md"
+    "docker/Docker Cheatsheet.md"
   ]
 }
