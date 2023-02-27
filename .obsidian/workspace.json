@@ -145,7 +145,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/kde/Week Password.md",
+                "file": "linux/kde/Chrome Remote Desktop.md",
                 "mode": "source",
                 "source": false
               }
@@ -218,7 +218,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/kde/Week Password.md",
+                "file": "linux/kde/Chrome Remote Desktop.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -235,7 +235,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/kde/Week Password.md",
+                "file": "linux/kde/Chrome Remote Desktop.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -258,7 +258,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/kde/Week Password.md"
+                "file": "linux/kde/Chrome Remote Desktop.md"
               }
             }
           }
@@ -281,8 +281,8 @@
   },
   "active": "99d9de51c4a2bc47",
   "lastOpenFiles": [
-    "linux/kde/Chrome Remote Desktop.md",
     "linux/kde/Week Password.md",
+    "linux/kde/Chrome Remote Desktop.md",
     "linux/kde/System Policy Grants.md",
     "linux/Setup Terminal and dotfiles.md",
     "README.md",
