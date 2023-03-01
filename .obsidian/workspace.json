@@ -4,155 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "10ad66cdfc28ce92",
+        "id": "a86c9f2695583fdb",
         "type": "tabs",
         "children": [
           {
-            "id": "20f4d1bc0aa13fdc",
+            "id": "0b74b994018d06e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "vscode/Upgrade on Linux.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "2ff6592dacbfe6c2",
+            "id": "d1b97131c0be2a7f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/Setup Terminal and dotfiles.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0eb0328a6adb1f58",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/kde/Setup.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aa1615f84b1314ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/kde/Setup.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "557208d92a4149db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docker/AWS Docker Registry.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "89abebd4645faa72",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docker/AWS Docker Registry.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cf77be9463a1acb5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docker/AWS Docker Registry.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c450236dc33181ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/Setup Terminal and dotfiles.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "15303313c0638449",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "aws/cli/Profiles.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e78bb8e01d55a141",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/kde/System Policy Grants.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "94256ad8f4ee7653",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/kde/Week Password.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "99d9de51c4a2bc47",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/kde/Chrome Remote Desktop.md",
+                "file": "vscode/VSCode Dev Containers.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -218,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/kde/Chrome Remote Desktop.md",
+                "file": "vscode/VSCode Dev Containers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -235,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/kde/Chrome Remote Desktop.md",
+                "file": "vscode/VSCode Dev Containers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -258,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/kde/Chrome Remote Desktop.md"
+                "file": "vscode/VSCode Dev Containers.md"
               }
             }
           }
@@ -279,16 +159,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "99d9de51c4a2bc47",
+  "active": "d1b97131c0be2a7f",
   "lastOpenFiles": [
-    "linux/kde/Week Password.md",
+    "vscode/Upgrade on Linux.md",
+    "vscode/VSCode Dev Containers.md",
     "linux/kde/Chrome Remote Desktop.md",
+    "linux/kde/Faster Scrolling with IMWheel.md",
+    "linux/kde/Setup.md",
     "linux/kde/System Policy Grants.md",
+    "linux/kde/Week Password.md",
+    "fashionphile/Web App.md",
     "linux/Setup Terminal and dotfiles.md",
     "README.md",
     "aws/cli/Profiles.md",
-    "linux/kde/Faster Scrolling with IMWheel.md",
-    "vscode/Upgrade on Linux.md",
     "docker/AWS Docker Registry.md",
     "docker/Docker Cheatsheet.md"
   ]
