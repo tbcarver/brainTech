@@ -73,6 +73,28 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docker/AWS Docker Registry.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ca3b732ace428c29",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.8"
+              }
+            }
+          },
+          {
+            "id": "f83132dab695f3a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "gpg/Setup GPG.md",
                 "mode": "source",
                 "source": false
@@ -80,7 +102,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -123,6 +145,14 @@
             "type": "leaf",
             "state": {
               "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "f416cd282a89ab3e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {}
             }
           }
@@ -207,25 +237,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "05c27aee686830f5",
+  "active": "f83132dab695f3a5",
   "lastOpenFiles": [
+    "README.md",
+    "aws/cli/Profiles.md",
+    "fashionphile/Web App.md",
+    "vscode/VSCode Dev Containers.md",
     "linux/Setup Terminal and dotfiles.md",
+    "linux/kde/Setup.md",
     "gpg/Setup GPG.md",
     "Untitled.md",
     "gpg",
-    "aws/cli/Profiles.md",
     "wsl/Distros on WSL 2.md",
     "wsl/Docker on Windows with WSL 2.md",
-    "fashionphile/Web App.md",
-    "README.md",
-    "vscode/VSCode Dev Containers.md",
     "linux/kde/Faster Scrolling with IMWheel.md",
     "docker/Docker Cheatsheet.md",
     "docker/AWS Docker Registry.md",
     "wsl",
     "vscode/Upgrade on Linux.md",
     "linux/kde/Chrome Remote Desktop.md",
-    "linux/kde/Setup.md",
     "linux/kde/System Policy Grants.md",
     "linux/kde/Week Password.md"
   ]

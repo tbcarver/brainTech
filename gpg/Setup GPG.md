@@ -41,3 +41,6 @@ To test
 			git log --show-signature -1
 
 
+To restart
+
+		gpgconf --kill gpg-agent
