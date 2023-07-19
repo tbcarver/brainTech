@@ -95,7 +95,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gpg/Setup GPG.md",
+                "file": "wsl/Distros on WSL 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -176,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gpg/Setup GPG.md",
+                "file": "wsl/Distros on WSL 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +193,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gpg/Setup GPG.md",
+                "file": "wsl/Distros on WSL 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -216,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gpg/Setup GPG.md"
+                "file": "wsl/Distros on WSL 2.md"
               }
             }
           }
@@ -239,13 +239,13 @@
   },
   "active": "f83132dab695f3a5",
   "lastOpenFiles": [
-    "README.md",
+    "gpg/Setup GPG.md",
     "aws/cli/Profiles.md",
+    "README.md",
     "fashionphile/Web App.md",
     "vscode/VSCode Dev Containers.md",
     "linux/Setup Terminal and dotfiles.md",
     "linux/kde/Setup.md",
-    "gpg/Setup GPG.md",
     "Untitled.md",
     "gpg",
     "wsl/Distros on WSL 2.md",

@@ -13,3 +13,9 @@ To test
 		
 Make sure the MTU is the same if not using 1500 on the host (ie VPN using 1400)
 		sudo ip link set dev eth0 mtu 1400
+		
+To terminate a disto
+		wsl --terminate Ubuntu
+
+To list runing distros
+		wsl --list --running
