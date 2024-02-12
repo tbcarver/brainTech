@@ -131,7 +131,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wsl/Distros on WSL 2.md",
+                "file": "github/copilot/github copilot.md",
                 "mode": "source",
                 "source": false
               }
@@ -212,7 +212,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wsl/Distros on WSL 2.md",
+                "file": "github/copilot/github copilot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -229,7 +229,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wsl/Distros on WSL 2.md",
+                "file": "github/copilot/github copilot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +252,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wsl/Distros on WSL 2.md"
+                "file": "github/copilot/github copilot.md"
               }
             }
           }
@@ -275,8 +275,11 @@
   },
   "active": "88b1d852bb76a348",
   "lastOpenFiles": [
-    "fashionphile/Web App.md",
     "wsl/Distros on WSL 2.md",
+    "github/copilot/github copilot.md",
+    "github/copilot",
+    "github",
+    "fashionphile/Web App.md",
     "aws/cli/Profiles.md",
     "wsl/Docker on Windows with WSL 2.md",
     "gpg/Setup GPG.md",
