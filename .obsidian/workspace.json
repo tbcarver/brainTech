@@ -100,9 +100,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6633c82ef0196555",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "gpg/Setup GPG.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8d47e76493b346f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "88b1d852bb76a348",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wsl/Distros on WSL 2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -237,19 +273,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f83132dab695f3a5",
+  "active": "88b1d852bb76a348",
   "lastOpenFiles": [
-    "gpg/Setup GPG.md",
-    "aws/cli/Profiles.md",
-    "README.md",
     "fashionphile/Web App.md",
+    "wsl/Distros on WSL 2.md",
+    "aws/cli/Profiles.md",
+    "wsl/Docker on Windows with WSL 2.md",
+    "gpg/Setup GPG.md",
     "vscode/VSCode Dev Containers.md",
+    "README.md",
     "linux/Setup Terminal and dotfiles.md",
     "linux/kde/Setup.md",
     "Untitled.md",
     "gpg",
-    "wsl/Distros on WSL 2.md",
-    "wsl/Docker on Windows with WSL 2.md",
     "linux/kde/Faster Scrolling with IMWheel.md",
     "docker/Docker Cheatsheet.md",
     "docker/AWS Docker Registry.md",
