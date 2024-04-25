@@ -4,141 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "a86c9f2695583fdb",
+        "id": "4c85cfe9e69bb37d",
         "type": "tabs",
         "children": [
           {
-            "id": "0b74b994018d06e3",
+            "id": "9f9ed16fca7cb6f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "vscode/Upgrade on Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d1b97131c0be2a7f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "vscode/VSCode Dev Containers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ef9d906dcd4d016d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "vscode/VSCode Dev Containers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "57277bd55d3a685d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wsl/Docker on Windows with WSL 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2c2fd015a5547794",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/Setup Terminal and dotfiles.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "05c27aee686830f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docker/AWS Docker Registry.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ca3b732ace428c29",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.2.8"
-              }
-            }
-          },
-          {
-            "id": "f83132dab695f3a5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wsl/Distros on WSL 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6633c82ef0196555",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "gpg/Setup GPG.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8d47e76493b346f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "88b1d852bb76a348",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "github/copilot/github copilot.md",
+                "file": "fashionphile/Web App.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "github/copilot/github copilot.md",
+                "file": "fashionphile/Web App.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -229,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "github/copilot/github copilot.md",
+                "file": "fashionphile/Web App.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "github/copilot/github copilot.md"
+                "file": "fashionphile/Web App.md"
               }
             }
           }
@@ -273,18 +154,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88b1d852bb76a348",
+  "active": "9f9ed16fca7cb6f4",
   "lastOpenFiles": [
-    "wsl/Distros on WSL 2.md",
+    "aws/cli/Profiles.md",
+    "autohotkey/tinkerwell.ahk.md",
+    "Untitled.canvas",
+    "autohotkey/ctrl-click.ahk.md",
+    "autohotkey/ctrl-click.ahk",
+    "autohotkey",
+    "README.md",
     "github/copilot/github copilot.md",
+    "wsl/Distros on WSL 2.md",
     "github/copilot",
     "github",
     "fashionphile/Web App.md",
-    "aws/cli/Profiles.md",
     "wsl/Docker on Windows with WSL 2.md",
     "gpg/Setup GPG.md",
     "vscode/VSCode Dev Containers.md",
-    "README.md",
     "linux/Setup Terminal and dotfiles.md",
     "linux/kde/Setup.md",
     "Untitled.md",
