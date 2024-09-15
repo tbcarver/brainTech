@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "ssh/SSH Windows.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "ssh/SSH Windows.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "ssh/SSH Windows.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "fashionphile/Web App.md"
+                "file": "ssh/SSH Windows.md"
               }
             }
           }
@@ -156,6 +156,9 @@
   },
   "active": "9f9ed16fca7cb6f4",
   "lastOpenFiles": [
+    "fashionphile/Web App.md",
+    "ssh/SSH Windows.md",
+    "ssh",
     "aws/cli/Profiles.md",
     "autohotkey/tinkerwell.ahk.md",
     "Untitled.canvas",
@@ -167,7 +170,6 @@
     "wsl/Distros on WSL 2.md",
     "github/copilot",
     "github",
-    "fashionphile/Web App.md",
     "wsl/Docker on Windows with WSL 2.md",
     "gpg/Setup GPG.md",
     "vscode/VSCode Dev Containers.md",
