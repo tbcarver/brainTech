@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4c85cfe9e69bb37d",
+        "id": "4e3bc19702eee313",
         "type": "tabs",
         "children": [
           {
-            "id": "9f9ed16fca7cb6f4",
+            "id": "4d8db47c5bde5947",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "fashionphile/Web App.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -39,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +54,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +64,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -70,7 +74,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -93,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "github/copilot/github copilot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +107,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for github copilot"
             }
           },
           {
@@ -110,10 +118,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "fashionphile/Web App.md",
+                "file": "github/copilot/github copilot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from github copilot"
             }
           },
           {
@@ -124,7 +134,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -133,8 +145,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "fashionphile/Web App.md"
-              }
+                "file": "github/copilot/github copilot.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of github copilot"
             }
           }
         ]
@@ -154,21 +168,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f9ed16fca7cb6f4",
+  "active": "4d8db47c5bde5947",
   "lastOpenFiles": [
+    "wsl/Docker on Windows with WSL 2.md",
+    "wsl/Distros on WSL 2.md",
+    "Untitled.canvas",
+    "fashionphile/Web App.md",
     "aws/cli/Profiles.md",
     "autohotkey/tinkerwell.ahk.md",
-    "Untitled.canvas",
     "autohotkey/ctrl-click.ahk.md",
     "autohotkey/ctrl-click.ahk",
     "autohotkey",
     "README.md",
     "github/copilot/github copilot.md",
-    "wsl/Distros on WSL 2.md",
     "github/copilot",
     "github",
-    "fashionphile/Web App.md",
-    "wsl/Docker on Windows with WSL 2.md",
     "gpg/Setup GPG.md",
     "vscode/VSCode Dev Containers.md",
     "linux/Setup Terminal and dotfiles.md",
