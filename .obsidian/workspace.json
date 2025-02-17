@@ -168,8 +168,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4d8db47c5bde5947",
+  "active": "49fe2fb71ef1ab91",
   "lastOpenFiles": [
+    "ssh/SSH Windows.md",
+    "ssh",
     "wsl/Docker on Windows with WSL 2.md",
     "wsl/Distros on WSL 2.md",
     "Untitled.canvas",
