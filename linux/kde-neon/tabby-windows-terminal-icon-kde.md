@@ -5,24 +5,25 @@ system icon theme.
 
 ------------------------------------------------------------------------
 
-## 1. Download the Windows Terminal Icon
+## 1. Download the Windows Terminal SVG Icon
 
 ``` bash
-mkdir -p ~/.local/share/icons && curl -L "https://store-images.s-microsoft.com/image/apps.8232.13926773940052066.8978812d-6c65-429b-835d-2cecd178e2d7.7cb2976d-0593-49c3-8ab7-8bce4a09d750?h=307" -o ~/.local/share/icons/windows-terminal.webp
+mkdir -p ~/.local/share/icons && curl -L "https://upload.wikimedia.org/wikipedia/commons/5/51/Windows_Terminal_logo.svg" -o ~/.local/share/icons/windows-terminal.svg
 ```
 
 This saves the icon to:
 
-    ~/.local/share/icons/windows-terminal.webp
+    ~/.local/share/icons/windows-terminal.svg
+
+SVG works best because KDE Plasma scales vector icons perfectly at any
+taskbar size.
 
 ------------------------------------------------------------------------
 
 ## 2. Override the Tabby Launcher Icon
 
 ``` bash
-cp /usr/share/applications/tabby.desktop ~/.local/share/applications/tabby.desktop && \
-sed -i 's|^Icon=.*|Icon=/home/'"$USER"'/.local/share/icons/windows-terminal.webp|' ~/.local/share/applications/tabby.desktop && \
-kbuildsycoca6
+cp /usr/share/applications/tabby.desktop ~/.local/share/applications/tabby.desktop && sed -i 's|^Icon=.*|Icon=/home/'"$USER"'/.local/share/icons/windows-terminal.svg|' ~/.local/share/applications/tabby.desktop && kbuildsycoca6
 ```
 
 This: - Copies the system launcher to your user launcher directory -
@@ -33,14 +34,14 @@ Changes the icon path - Refreshes the KDE application database
 ## 3. Restart Plasma (If the Icon Does Not Update)
 
 ``` bash
-kquitapp5 plasmashell && kstart5 plasmashell
+kquitapp6 plasmashell && kstart plasmashell
 ```
 
 ------------------------------------------------------------------------
 
 ## Result
 
-Tabby will now use the **Windows Terminal--style icon** in:
+Tabby will now use the **Windows Terminal icon** in:
 
 -   KDE taskbar
 -   Application launcher

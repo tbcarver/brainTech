@@ -33,12 +33,24 @@ Paste the script below, save, and close the editor.
 #!/usr/bin/env bash
 set -euo pipefail
 
+cleanUpMode="false"
+if [[ "${1-}" == "--clean-up" ]]; then
+  cleanUpMode="true"
+  shift
+fi
+
 profileNumber="${1-}"
 displayName="${2-}"
+overlayIconUrl="${3-}"
 
 if [[ -z "${profileNumber}" || -z "${displayName}" ]]; then
-  echo "Usage: $(basename "$0") <profile-number> <name>"
-  echo "Example: $(basename "$0") 3 Fashionphile"
+  echo "Usage:"
+  echo "  $(basename "$0") <profile-number> <name> [overlay-icon-url]"
+  echo "  $(basename "$0") --clean-up <profile-number> <name>"
+  echo "Examples:"
+  echo "  $(basename "$0") 3 Fashionphile"
+  echo "  $(basename "$0") 3 Fashionphile https://example.com/badge.png"
+  echo "  $(basename "$0") --clean-up 3 Fashionphile"
   exit 1
 fi
 
@@ -66,6 +78,29 @@ mkdir -p "${applicationDir}"
 mkdir -p "${iconsDir}"
 mkdir -p "${launcherDataRoot}"
 
+baseName="chrome-${slug}-profile-${profileNumber}"
+targetDesktop="${applicationDir}/${baseName}.desktop"
+targetIconPath="${iconsDir}/${baseName}.png"
+userDataDir="${launcherDataRoot}/${baseName}"
+
+if [[ "${cleanUpMode}" == "true" ]]; then
+  rm -f "${targetDesktop}"
+  rm -f "${targetIconPath}"
+  rm -rf "${userDataDir}"
+
+  if command -v kbuildsycoca6 >/dev/null 2>&1; then
+    kbuildsycoca6 >/dev/null 2>&1 || true
+  elif command -v kbuildsycoca5 >/dev/null 2>&1; then
+    kbuildsycoca5 >/dev/null 2>&1 || true
+  fi
+
+  echo "Removed:"
+  echo "  ${targetDesktop}"
+  echo "  ${targetIconPath}"
+  echo "  ${userDataDir}"
+  exit 0
+fi
+
 sourceDesktop=""
 for candidate in \
   "/usr/share/applications/google-chrome.desktop" \
@@ -82,38 +117,66 @@ if [[ -z "${sourceDesktop}" ]]; then
   exit 1
 fi
 
-baseName="chrome-${slug}-profile-${profileNumber}"
-targetDesktop="${applicationDir}/${baseName}.desktop"
-targetIconName="${baseName}"
-
 chromeProfileDir="${HOME}/.config/google-chrome/${profileDirectory}"
 
+cleanupFiles=()
 avatarSource=""
-for candidate in \
-  "${chromeProfileDir}/Google Profile Picture.png" \
-  "${chromeProfileDir}/Avatar.png"
-do
-  if [[ -f "${candidate}" ]]; then
-    avatarSource="${candidate}"
-    break
+
+if [[ -n "${overlayIconUrl}" ]]; then
+  if ! command -v curl >/dev/null 2>&1; then
+    echo "curl is required to download overlay icon. overlayIconUrl='${overlayIconUrl}'"
+    exit 1
   fi
-done
+
+  tmpOverlay="$(mktemp --suffix=.img)"
+  cleanupFiles+=("${tmpOverlay}")
+  curl -fsSL -o "${tmpOverlay}" "${overlayIconUrl}"
+
+  tmpOverlayPng="${tmpOverlay}.png"
+  cleanupFiles+=("${tmpOverlayPng}")
+  if command -v magick >/dev/null 2>&1; then
+    magick "${tmpOverlay}" "${tmpOverlayPng}"
+  else
+    convert "${tmpOverlay}" "${tmpOverlayPng}"
+  fi
+
+  avatarSource="${tmpOverlayPng}"
+else
+  for candidate in \
+    "${chromeProfileDir}/Google Profile Picture.png" \
+    "${chromeProfileDir}/Avatar.png"
+  do
+    if [[ -f "${candidate}" ]]; then
+      avatarSource="${candidate}"
+      break
+    fi
+  done
+fi
+
+trap 'for filePath in "${cleanupFiles[@]-}"; do if [[ -n "${filePath}" && -f "${filePath}" ]]; then rm -f "${filePath}"; fi; done' EXIT
 
 iconValue="google-chrome"
-targetIconPath=""
 
 chromeIcon="/usr/share/icons/hicolor/256x256/apps/google-chrome.png"
+
 if [[ -n "${avatarSource}" && -f "${chromeIcon}" ]]; then
-  targetIconPath="${iconsDir}/${targetIconName}.png"
+  if command -v magick >/dev/null 2>&1; then
+    magick "${chromeIcon}" \
+      \( "${avatarSource}" -resize 128x128 \) \
+      -gravity southeast \
+      -geometry +20+20 \
+      -composite \
+      "${targetIconPath}"
+  else
+    convert "${chromeIcon}" \
+      \( "${avatarSource}" -resize 128x128 \) \
+      -gravity southeast \
+      -geometry +20+20 \
+      -composite \
+      "${targetIconPath}"
+  fi
 
-  convert "${chromeIcon}" \
-    \( "${avatarSource}" -resize 128x128 \) \
-    -gravity southeast \
-    -geometry +20+20 \
-    -composite \
-    "${targetIconPath}"
-
-  iconValue="${targetIconName}"
+  iconValue="${baseName}"
 fi
 
 execBinary="$(grep -E '^Exec=' "${sourceDesktop}" | head -n 1 | sed 's/^Exec=//' | awk '{print $1}')"
@@ -125,7 +188,6 @@ fi
 nameValue="Chrome - ${displayName}"
 startupWmClassValue="${baseName}"
 
-userDataDir="${launcherDataRoot}/${baseName}"
 mkdir -p "${userDataDir}"
 
 execValue="${execBinary} --user-data-dir=\"${userDataDir}\" --profile-directory=\"${profileDirectory}\" --class=${baseName} --name=${baseName}"
@@ -175,7 +237,7 @@ elif command -v kbuildsycoca5 >/dev/null 2>&1; then
 fi
 
 echo "Desktop file: ${targetDesktop}"
-if [[ -n "${targetIconPath}" ]]; then
+if [[ -f "${targetIconPath}" ]]; then
   echo "Icon file:    ${targetIconPath}"
 else
   echo "Icon file:    using default icon '${iconValue}'"

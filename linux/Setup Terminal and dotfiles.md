@@ -12,8 +12,9 @@
 			&& fc-list | grep "MesloLGS NF"
 
 - (Linux with GUI)  Install **Tabby** for the termial https://tabby.sh/
-	- setting, hotkeys: set copy, paste
+	- setting, hotkeys: set intelligent cntl-c (copy), paste
 	- settings, appearance: set font MesloLGS NF, increase size by 3
+	- settings, appearance: change cursor shape
 	- settings, terminal: Warn on multi-line paste, turn off
 	- settings,  hotkeys: (search for space) Toggle terminal window, delete ctrl-space
 	- settings,  hotkeys: (search new tab) New tab, set to ctrl-t
