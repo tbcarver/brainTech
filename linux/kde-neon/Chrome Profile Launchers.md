@@ -11,6 +11,8 @@ ChatGPT
 Fashionphile
 ./make-chrome-profile-launcher.sh 3 Fashionphile https://www.fashionphile.com/cdn/shop/files/content-icon-fav-icon.png
 
+./make-chrome-profile-launcher.sh --icon-only --background-color '#242938'  4 Dev https://files.svgcdn.io/skill-icons/vscode-dark.png
+Icon updated: /home/tyler/.local/share/icons/chrome-dev-profile-4.png
 ---
 
 ## 1) Install ImageMagick (for icon overlay)
