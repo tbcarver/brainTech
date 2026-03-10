@@ -3,6 +3,14 @@
 This setup creates **one launcher per Chrome profile** that stays **independent** in KDE’s task manager by giving each launcher its own `--user-data-dir`.  
 It also generates a **Windows-style icon** (Chrome icon with the profile avatar overlaid).
 
+Icons:
+Tyler
+./make-chrome-profile-launcher.sh 1 Tyler https://render.pixels.com/images/rendered/default/print/6.5/8/break/images/artworkimages/medium/2/half-american-half-colombian-jose-o.jpg
+ChatGPT
+./make-chrome-profile-launcher.sh  --icon-only --background-color '#FFFFFF' 2 ChatGPT https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/1280px-ChatGPT-Logo.svg.png
+Fashionphile
+./make-chrome-profile-launcher.sh 3 Fashionphile https://www.fashionphile.com/cdn/shop/files/content-icon-fav-icon.png
+
 ---
 
 ## 1) Install ImageMagick (for icon overlay)
@@ -34,10 +42,32 @@ Paste the script below, save, and close the editor.
 set -euo pipefail
 
 cleanUpMode="false"
-if [[ "${1-}" == "--clean-up" ]]; then
-  cleanUpMode="true"
-  shift
-fi
+iconOnlyMode="false"
+backgroundColor=""
+
+while [[ $# -gt 0 ]]; do
+  case "${1}" in
+    --clean-up)
+      cleanUpMode="true"
+      shift
+      ;;
+    --icon-only)
+      iconOnlyMode="true"
+      shift
+      ;;
+    --background-color)
+      backgroundColor="${2-}"
+      if [[ -z "${backgroundColor}" ]]; then
+        echo "Missing value for --background-color"
+        exit 1
+      fi
+      shift 2
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 profileNumber="${1-}"
 displayName="${2-}"
@@ -46,10 +76,14 @@ overlayIconUrl="${3-}"
 if [[ -z "${profileNumber}" || -z "${displayName}" ]]; then
   echo "Usage:"
   echo "  $(basename "$0") <profile-number> <name> [overlay-icon-url]"
+  echo "  $(basename "$0") --background-color '#FFFFFF' <profile-number> <name> [overlay-icon-url]"
+  echo "  $(basename "$0") --icon-only [--background-color '#FFFFFF'] <profile-number> <name> [overlay-icon-url]"
   echo "  $(basename "$0") --clean-up <profile-number> <name>"
   echo "Examples:"
   echo "  $(basename "$0") 3 Fashionphile"
   echo "  $(basename "$0") 3 Fashionphile https://example.com/badge.png"
+  echo "  $(basename "$0") --background-color '#000000' 3 Fashionphile https://example.com/badge.png"
+  echo "  $(basename "$0") --icon-only --background-color '#000000' 3 Fashionphile https://example.com/badge.png"
   echo "  $(basename "$0") --clean-up 3 Fashionphile"
   exit 1
 fi
@@ -101,6 +135,110 @@ if [[ "${cleanUpMode}" == "true" ]]; then
   exit 0
 fi
 
+if command -v magick >/dev/null 2>&1; then
+  imageTool="magick"
+elif command -v convert >/dev/null 2>&1; then
+  imageTool="convert"
+else
+  imageTool=""
+fi
+
+chromeProfileDir="${HOME}/.config/google-chrome/${profileDirectory}"
+
+cleanupFiles=()
+avatarSource=""
+
+trap 'for filePath in "${cleanupFiles[@]-}"; do if [[ -n "${filePath}" && -f "${filePath}" ]]; then rm -f "${filePath}"; fi; done' EXIT
+
+if [[ -n "${overlayIconUrl}" ]]; then
+  if ! command -v curl >/dev/null 2>&1; then
+    echo "curl is required to download overlay icon. overlayIconUrl='${overlayIconUrl}'"
+    exit 1
+  fi
+
+  if [[ -z "${imageTool}" ]]; then
+    echo "ImageMagick is required to generate overlay icon."
+    exit 1
+  fi
+
+  tmpOverlay="$(mktemp --suffix=.img)"
+  cleanupFiles+=("${tmpOverlay}")
+  curl -fsSL -o "${tmpOverlay}" "${overlayIconUrl}"
+
+  tmpOverlayPng="$(mktemp --suffix=.png)"
+  cleanupFiles+=("${tmpOverlayPng}")
+  "${imageTool}" "${tmpOverlay}" -strip -colorspace sRGB -alpha on "PNG32:${tmpOverlayPng}"
+
+  tmpOverlaySquare="$(mktemp --suffix=.png)"
+  cleanupFiles+=("${tmpOverlaySquare}")
+  "${imageTool}" "${tmpOverlayPng}" \
+    -resize 128x128 \
+    -gravity center \
+    -background none \
+    -extent 128x128 \
+    "PNG32:${tmpOverlaySquare}"
+
+  if [[ -n "${backgroundColor}" ]]; then
+    tmpOverlayBg="$(mktemp --suffix=.png)"
+    cleanupFiles+=("${tmpOverlayBg}")
+    "${imageTool}" \
+      -size 128x128 "xc:${backgroundColor}" \
+      "${tmpOverlaySquare}" \
+      -gravity center \
+      -compose over \
+      -composite \
+      "PNG32:${tmpOverlayBg}"
+    avatarSource="${tmpOverlayBg}"
+  else
+    avatarSource="${tmpOverlaySquare}"
+  fi
+else
+  for candidate in \
+    "${chromeProfileDir}/Google Profile Picture.png" \
+    "${chromeProfileDir}/Avatar.png"
+  do
+    if [[ -f "${candidate}" ]]; then
+      avatarSource="${candidate}"
+      break
+    fi
+  done
+fi
+
+iconValue="google-chrome"
+
+chromeIcon="/usr/share/icons/hicolor/256x256/apps/google-chrome.png"
+
+if [[ -n "${avatarSource}" && -f "${chromeIcon}" ]]; then
+  if [[ -z "${imageTool}" ]]; then
+    echo "ImageMagick is required to generate overlay icon."
+    exit 1
+  fi
+
+  tmpOverlayCircle="$(mktemp --suffix=.png)"
+  cleanupFiles+=("${tmpOverlayCircle}")
+
+  "${imageTool}" "${avatarSource}" \
+    \( -size 128x128 xc:none -fill white -draw "circle 64,64 64,1" \) \
+    -compose DstIn \
+    -composite \
+    "PNG32:${tmpOverlayCircle}"
+
+  "${imageTool}" "${chromeIcon}" \
+    "${tmpOverlayCircle}" \
+    -gravity southeast \
+    -geometry +20+20 \
+    -compose over \
+    -composite \
+    "PNG32:${targetIconPath}"
+
+  iconValue="${baseName}"
+fi
+
+if [[ "${iconOnlyMode}" == "true" ]]; then
+  echo "Icon updated: ${targetIconPath}"
+  exit 0
+fi
+
 sourceDesktop=""
 for candidate in \
   "/usr/share/applications/google-chrome.desktop" \
@@ -115,68 +253,6 @@ done
 if [[ -z "${sourceDesktop}" ]]; then
   echo "Chrome desktop file not found in /usr/share/applications"
   exit 1
-fi
-
-chromeProfileDir="${HOME}/.config/google-chrome/${profileDirectory}"
-
-cleanupFiles=()
-avatarSource=""
-
-if [[ -n "${overlayIconUrl}" ]]; then
-  if ! command -v curl >/dev/null 2>&1; then
-    echo "curl is required to download overlay icon. overlayIconUrl='${overlayIconUrl}'"
-    exit 1
-  fi
-
-  tmpOverlay="$(mktemp --suffix=.img)"
-  cleanupFiles+=("${tmpOverlay}")
-  curl -fsSL -o "${tmpOverlay}" "${overlayIconUrl}"
-
-  tmpOverlayPng="${tmpOverlay}.png"
-  cleanupFiles+=("${tmpOverlayPng}")
-  if command -v magick >/dev/null 2>&1; then
-    magick "${tmpOverlay}" "${tmpOverlayPng}"
-  else
-    convert "${tmpOverlay}" "${tmpOverlayPng}"
-  fi
-
-  avatarSource="${tmpOverlayPng}"
-else
-  for candidate in \
-    "${chromeProfileDir}/Google Profile Picture.png" \
-    "${chromeProfileDir}/Avatar.png"
-  do
-    if [[ -f "${candidate}" ]]; then
-      avatarSource="${candidate}"
-      break
-    fi
-  done
-fi
-
-trap 'for filePath in "${cleanupFiles[@]-}"; do if [[ -n "${filePath}" && -f "${filePath}" ]]; then rm -f "${filePath}"; fi; done' EXIT
-
-iconValue="google-chrome"
-
-chromeIcon="/usr/share/icons/hicolor/256x256/apps/google-chrome.png"
-
-if [[ -n "${avatarSource}" && -f "${chromeIcon}" ]]; then
-  if command -v magick >/dev/null 2>&1; then
-    magick "${chromeIcon}" \
-      \( "${avatarSource}" -resize 128x128 \) \
-      -gravity southeast \
-      -geometry +20+20 \
-      -composite \
-      "${targetIconPath}"
-  else
-    convert "${chromeIcon}" \
-      \( "${avatarSource}" -resize 128x128 \) \
-      -gravity southeast \
-      -geometry +20+20 \
-      -composite \
-      "${targetIconPath}"
-  fi
-
-  iconValue="${baseName}"
 fi
 
 execBinary="$(grep -E '^Exec=' "${sourceDesktop}" | head -n 1 | sed 's/^Exec=//' | awk '{print $1}')"
