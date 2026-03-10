@@ -4,7 +4,7 @@ This setup creates **one launcher per Chrome profile** that stays **independent*
 It also generates a **Windows-style icon** (Chrome icon with the profile avatar overlaid).
 
 Icons:
-Tyler
+Tyler (don't use the url for a better icon from the profile)
 ./make-chrome-profile-launcher.sh 1 Tyler https://render.pixels.com/images/rendered/default/print/6.5/8/break/images/artworkimages/medium/2/half-american-half-colombian-jose-o.jpg
 ChatGPT
 ./make-chrome-profile-launcher.sh  --icon-only --background-color '#FFFFFF' 2 ChatGPT https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/1280px-ChatGPT-Logo.svg.png
@@ -147,6 +147,7 @@ chromeProfileDir="${HOME}/.config/google-chrome/${profileDirectory}"
 
 cleanupFiles=()
 avatarSource=""
+preparedAvatarSource=""
 
 trap 'for filePath in "${cleanupFiles[@]-}"; do if [[ -n "${filePath}" && -f "${filePath}" ]]; then rm -f "${filePath}"; fi; done' EXIT
 
@@ -165,9 +166,28 @@ if [[ -n "${overlayIconUrl}" ]]; then
   cleanupFiles+=("${tmpOverlay}")
   curl -fsSL -o "${tmpOverlay}" "${overlayIconUrl}"
 
+  avatarSource="${tmpOverlay}"
+else
+  for candidate in \
+    "${chromeProfileDir}/Google Profile Picture.png" \
+    "${chromeProfileDir}/Avatar.png"
+  do
+    if [[ -f "${candidate}" ]]; then
+      avatarSource="${candidate}"
+      break
+    fi
+  done
+fi
+
+if [[ -n "${avatarSource}" ]]; then
+  if [[ -z "${imageTool}" ]]; then
+    echo "ImageMagick is required to generate overlay icon."
+    exit 1
+  fi
+
   tmpOverlayPng="$(mktemp --suffix=.png)"
   cleanupFiles+=("${tmpOverlayPng}")
-  "${imageTool}" "${tmpOverlay}" -strip -colorspace sRGB -alpha on "PNG32:${tmpOverlayPng}"
+  "${imageTool}" "${avatarSource}" -strip -colorspace sRGB -alpha on "PNG32:${tmpOverlayPng}"
 
   tmpOverlaySquare="$(mktemp --suffix=.png)"
   cleanupFiles+=("${tmpOverlaySquare}")
@@ -188,27 +208,17 @@ if [[ -n "${overlayIconUrl}" ]]; then
       -compose over \
       -composite \
       "PNG32:${tmpOverlayBg}"
-    avatarSource="${tmpOverlayBg}"
+    preparedAvatarSource="${tmpOverlayBg}"
   else
-    avatarSource="${tmpOverlaySquare}"
+    preparedAvatarSource="${tmpOverlaySquare}"
   fi
-else
-  for candidate in \
-    "${chromeProfileDir}/Google Profile Picture.png" \
-    "${chromeProfileDir}/Avatar.png"
-  do
-    if [[ -f "${candidate}" ]]; then
-      avatarSource="${candidate}"
-      break
-    fi
-  done
 fi
 
 iconValue="google-chrome"
 
 chromeIcon="/usr/share/icons/hicolor/256x256/apps/google-chrome.png"
 
-if [[ -n "${avatarSource}" && -f "${chromeIcon}" ]]; then
+if [[ -n "${preparedAvatarSource}" && -f "${chromeIcon}" ]]; then
   if [[ -z "${imageTool}" ]]; then
     echo "ImageMagick is required to generate overlay icon."
     exit 1
@@ -217,7 +227,7 @@ if [[ -n "${avatarSource}" && -f "${chromeIcon}" ]]; then
   tmpOverlayCircle="$(mktemp --suffix=.png)"
   cleanupFiles+=("${tmpOverlayCircle}")
 
-  "${imageTool}" "${avatarSource}" \
+  "${imageTool}" "${preparedAvatarSource}" \
     \( -size 128x128 xc:none -fill white -draw "circle 64,64 64,1" \) \
     -compose DstIn \
     -composite \
