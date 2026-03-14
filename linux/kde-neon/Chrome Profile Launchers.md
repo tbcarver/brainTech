@@ -15,6 +15,13 @@ Fashionphile
 Icon updated: /home/tyler/.local/share/icons/chrome-dev-profile-4.png
 ---
 
+
+----
+Use this to make the launch default be tyler profile
+xdg-mime default chrome-tyler-profile-1.desktop x-scheme-handler/http && \
+xdg-mime default chrome-tyler-profile-1.desktop x-scheme-handler/https
+---
+
 ## 1) Install ImageMagick (for icon overlay)
 
 ```bash
@@ -278,7 +285,7 @@ startupWmClassValue="${baseName}"
 
 mkdir -p "${userDataDir}"
 
-execValue="${execBinary} --user-data-dir=\"${userDataDir}\" --profile-directory=\"${profileDirectory}\" --class=${baseName} --name=${baseName}"
+execValue="${execBinary} --user-data-dir=\"${userDataDir}\" --profile-directory=\"${profileDirectory}\" --class=${baseName} --name=${baseName} %U"
 
 cp -f "${sourceDesktop}" "${targetDesktop}"
 
