@@ -1,5 +1,5 @@
 
-add the .config
+add the .ssh/config
 
 ```
 Host *
