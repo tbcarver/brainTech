@@ -3,7 +3,7 @@
 ## Create script
 
 ```bash
-mkdir -p ~/bin && cat > ~/bin/code <<'EOF'
+cat > /usr/local/bin/code <<'EOF'
 #!/usr/bin/env bash
 
 wslDistroName="Ubuntu-22.04"
@@ -16,7 +16,7 @@ fi
 
 /mnt/c/Windows/System32/cmd.exe /C code --folder-uri "vscode-remote://wsl+${wslDistroName}${targetPath}"
 EOF
-chmod +x ~/bin/code
+chmod +x /usr/local/bin/code
 
 ### Validate
 which code
